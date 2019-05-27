@@ -9,5 +9,5 @@ module.exports = async function(deployer, network, accounts) {
     const erc1820 = await singletons.ERC1820Registry(accounts[0]);
   }
 
-  deployer.deploy(Simple777Token);
+  await deployer.deploy(Simple777Token);
 };
