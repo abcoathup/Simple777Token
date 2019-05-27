@@ -1,0 +1,29 @@
+{
+  "name": "Simple777Token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abcoathup/Simple777Token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abcoathup/Simple777Token/issues"
+  },
+  "homepage": "https://github.com/abcoathup/Simple777Token#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "ganache-cli": "^6.4.3",
+    "truffle": "^5.0.19"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "^2.3.0-rc.3",
+    "openzeppelin-test-helpers": "^0.4.0"
+  }
+}
