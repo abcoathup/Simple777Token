@@ -4,7 +4,6 @@ const { ZERO_ADDRESS } = constants;
 const Simple777Token = artifacts.require('Simple777Token');
 
 contract('Simple777Token', function ([_, registryFunder, creator]) {
-
   beforeEach(async function () {
     this.erc1820 = await singletons.ERC1820Registry(registryFunder);
     this.token = await Simple777Token.new({ from: creator });
