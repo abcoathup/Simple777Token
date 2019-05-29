@@ -45,7 +45,7 @@ module.exports = {
     development: {
       host: '127.0.0.1', // Localhost (default: none)
       port: 8545, // Standard Ethereum port (default: none)
-      network_id: '*', // Any network (default: none)
+      network_id: '*', // eslint-disable-line camelcase
     },
 
     // Another network with more advanced options...
@@ -60,7 +60,7 @@ module.exports = {
 
     rinkeby: {
       provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://rinkeby.infura.io/v3/' + infuraKey),
-      network_id: 4, // Rinkeby's id
+      network_id: 4, // eslint-disable-line camelcase
       gas: 5500000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
@@ -69,7 +69,7 @@ module.exports = {
 
     ropsten: {
       provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://ropsten.infura.io/v3/' + infuraKey),
-      network_id: 3, // Ropsten's id
+      network_id: 3, // eslint-disable-line camelcase
       gas: 5500000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
