@@ -22,7 +22,7 @@ require('dotenv').config();
 require('chai/register-should');
 
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const infuraKey = process.env.INFURA_API_KEY;
+const infuraProjectID = process.env.INFURA_PROJECT_ID;
 
 module.exports = {
   /**
@@ -59,7 +59,7 @@ module.exports = {
     // },
 
     rinkeby: {
-      provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://rinkeby.infura.io/v3/' + infuraKey),
+      provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://rinkeby.infura.io/v3/' + infuraProjectID),
       network_id: 4, // eslint-disable-line camelcase
       gas: 5500000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
@@ -68,7 +68,7 @@ module.exports = {
     },
 
     ropsten: {
-      provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://ropsten.infura.io/v3/' + infuraKey),
+      provider: () => new HDWalletProvider(process.env.DEV_MNEMONIC, 'https://ropsten.infura.io/v3/' + infuraProjectID),
       network_id: 3, // eslint-disable-line camelcase
       gas: 5500000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
