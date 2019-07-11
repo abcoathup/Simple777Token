@@ -1,4 +1,5 @@
 const Simple777Token = artifacts.require('Simple777Token');
+const Simple777Recipient = artifacts.require('Simple777Recipient');
 
 require('openzeppelin-test-helpers/configure')({ web3 });
 
@@ -11,4 +12,7 @@ module.exports = async function (deployer, network, accounts) {
   }
 
   await deployer.deploy(Simple777Token);
+  const token = await Simple777Token.deployed();
+
+  await deployer.deploy(Simple777Recipient, token.address);
 };
