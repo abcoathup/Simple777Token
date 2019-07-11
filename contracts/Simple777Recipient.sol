@@ -16,9 +16,9 @@ contract Simple777Recipient is IERC777Recipient {
     IERC777 private _token;
 
     constructor (address token) public {
-        _erc1820.setInterfaceImplementer(address(this), TOKENS_RECIPIENT_INTERFACE_HASH, address(this));
-
         _token = IERC777(token);
+
+        _erc1820.setInterfaceImplementer(address(this), TOKENS_RECIPIENT_INTERFACE_HASH, address(this));
     }
 
     function tokensReceived(
