@@ -15,6 +15,8 @@ contract Simple777Recipient is IERC777Recipient {
 
     IERC777 private _token;
 
+    event DoneStuff(address operator, address from, address to, uint256 amount, bytes userData, bytes operatorData);
+
     constructor (address token) public {
         _token = IERC777(token);
 
@@ -32,5 +34,6 @@ contract Simple777Recipient is IERC777Recipient {
         require(msg.sender == address(_token), "Simple777Recipient: Invalid token");
 
         // do stuff
+        emit DoneStuff(operator, from, to, amount, userData, operatorData);
     }
 }

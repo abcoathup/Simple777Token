@@ -1,4 +1,4 @@
-const { singletons, BN } = require('openzeppelin-test-helpers');
+const { singletons, BN, expectEvent } = require('openzeppelin-test-helpers');
 
 const Simple777Token = artifacts.require('Simple777Token');
 const Simple777Recipient = artifacts.require('Simple777Recipient');
@@ -16,7 +16,9 @@ contract('Simple777Recipient', function ([_, registryFunder, creator, holder]) {
 
   it('sends to a contract from an externally-owned account', async function () {
     const amount = new BN(1000);
-    await this.token.send(this.recipient.address, amount, data, { from: holder });
+    const receipt = await this.token.send(this.recipient.address, amount, data, { from: holder });
+
+    await expectEvent.inTransaction(receipt.tx, Simple777Recipient, 'DoneStuff', { from: holder, to: this.recipient.address, amount: amount, userData: data, operatorData: null });
 
     const recipientBalance = await this.token.balanceOf(this.recipient.address);
     recipientBalance.should.be.bignumber.equal(amount);
