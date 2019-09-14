@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "openzeppelin-solidity/contracts/token/ERC777/IERC777.sol";
-import "openzeppelin-solidity/contracts/introspection/IERC1820Registry.sol";
-import "openzeppelin-solidity/contracts/token/ERC777/IERC777Recipient.sol";
+import "@openzeppelin/contracts/token/ERC777/IERC777.sol";
+import "@openzeppelin/contracts/introspection/IERC1820Registry.sol";
+import "@openzeppelin/contracts/token/ERC777/IERC777Recipient.sol";
 
 /**
  * @title Simple777Recipient

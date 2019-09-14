@@ -23,22 +23,22 @@
   "homepage": "https://github.com/abcoathup/Simple777Token#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.1.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-mocha-no-only": "^1.1.0",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "ganache-cli": "^6.6.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "ganache-cli": "^6.7.0",
     "solhint": "^2.2.0",
-    "truffle": "^5.0.31",
-    "truffle-hdwallet-provider": "^1.0.16"
+    "truffle": "^5.0.36",
+    "truffle-hdwallet-provider": "^1.0.17"
   },
   "dependencies": {
-    "openzeppelin-solidity": "^2.3.0",
-    "openzeppelin-test-helpers": "^0.4.2",
-    "truffle-flattener": "^1.4.0"
+    "@openzeppelin/contracts": "^2.3.0",
+    "openzeppelin-test-helpers": "^0.4.3",
+    "truffle-flattener": "^1.4.2"
   }
 }
