@@ -32,8 +32,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "ganache-cli": "^6.7.0",
-    "solhint": "^2.2.0",
-    "truffle": "^5.0.36",
+    "solhint": "^2.3.0",
+    "truffle": "^5.0.37",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "dependencies": {
