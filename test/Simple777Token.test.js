@@ -4,7 +4,7 @@ const { ZERO_ADDRESS } = constants;
 
 const Simple777Token = artifacts.require('Simple777Token');
 
-contract('Simple777Token', function ([_, registryFunder, creator]) {
+contract('Simple777Token', function ([_, registryFunder, creator, operator]) {
   beforeEach(async function () {
     this.erc1820 = await singletons.ERC1820Registry(registryFunder);
     this.token = await Simple777Token.new({ from: creator });
@@ -30,4 +30,17 @@ contract('Simple777Token', function ([_, registryFunder, creator]) {
       value: totalSupply,
     });
   });
+
+  it('allows operator burn', async function () {
+    const creatorBalance = await this.token.balanceOf(creator);
+    const data = web3.utils.sha3('Simple777Data');
+    const operatorData = web3.utils.sha3('Simple777OperatorData');
+
+    await this.token.authorizeOperator(operator, { from: creator });
+    await this.token.operatorBurn(creator, creatorBalance, data, operatorData, { from: operator });
+    (await this.token.balanceOf(creator)).should.be.bignumber.equal("0");
+
+  });
+
+
 });
