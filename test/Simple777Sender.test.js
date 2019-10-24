@@ -1,4 +1,4 @@
-const { singletons, BN, expectEvent } = require('openzeppelin-test-helpers');
+const { singletons, BN, expectEvent } = require('@openzeppelin/test-helpers');
 
 const Simple777Token = artifacts.require('Simple777Token');
 const Simple777Sender = artifacts.require('Simple777Sender');

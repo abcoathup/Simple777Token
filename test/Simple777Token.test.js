@@ -1,5 +1,5 @@
 // Based on https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/test/examples/SimpleToken.test.js
-const { expectEvent, singletons, constants } = require('openzeppelin-test-helpers');
+const { expectEvent, singletons, constants } = require('@openzeppelin/test-helpers');
 const { ZERO_ADDRESS } = constants;
 
 const Simple777Token = artifacts.require('Simple777Token');
