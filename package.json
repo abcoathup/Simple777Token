@@ -23,7 +23,7 @@
   "homepage": "https://github.com/abcoathup/Simple777Token#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "dotenv": "^8.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.18.2",
@@ -33,7 +33,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "ganache-cli": "^6.7.0",
     "solhint": "^2.3.0",
-    "truffle": "^5.0.37",
+    "truffle": "^5.0.41",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "dependencies": {
