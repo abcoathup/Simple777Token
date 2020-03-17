@@ -1,12 +1,20 @@
+const { accounts, contract, web3 } = require('@openzeppelin/test-environment');
+
+const { expect } = require('chai');
+require('chai').should();
+
 const { singletons, BN, expectEvent } = require('@openzeppelin/test-helpers');
 
-const Simple777Token = artifacts.require('Simple777Token');
-const Simple777Sender = artifacts.require('Simple777Sender');
+const Simple777Token = contract.fromArtifact('Simple777Token');
+const Simple777Sender = contract.fromArtifact('Simple777Sender');
 
-contract('Simple777Sender', function ([_, registryFunder, creator, holder, recipient]) {
+describe('Simple777Sender', function () {
+  const [registryFunder, creator, holder, recipient] = accounts;
+  
   const data = web3.utils.sha3('777TestData');
 
   beforeEach(async function () {
+    this.timeout(3000);
     this.erc1820 = await singletons.ERC1820Registry(registryFunder);
     this.token = await Simple777Token.new({ from: creator });
     const amount = new BN(10000);

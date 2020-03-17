@@ -1,10 +1,17 @@
 // Based on https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/test/examples/SimpleToken.test.js
+const { accounts, contract, web3 } = require('@openzeppelin/test-environment');
+
+const { expect } = require('chai');
+require('chai').should();
+
 const { expectEvent, singletons, constants } = require('@openzeppelin/test-helpers');
 const { ZERO_ADDRESS } = constants;
 
-const Simple777Token = artifacts.require('Simple777Token');
+const Simple777Token = contract.fromArtifact('Simple777Token');
 
-contract('Simple777Token', function ([_, registryFunder, creator, operator]) {
+describe('Simple777Token', function () {
+  const [registryFunder, creator, operator] = accounts;
+
   beforeEach(async function () {
     this.erc1820 = await singletons.ERC1820Registry(registryFunder);
     this.token = await Simple777Token.new({ from: creator });
