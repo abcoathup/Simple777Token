@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC777/IERC777.sol";
 import "@openzeppelin/contracts/introspection/IERC1820Registry.sol";
@@ -22,7 +22,7 @@ contract Simple777Sender is IERC777Sender, ERC1820Implementer {
         uint256 amount,
         bytes calldata userData,
         bytes calldata operatorData
-    ) external {
+    ) external override {
 
         // do stuff
         emit DoneStuff(operator, from, to, amount, userData, operatorData);

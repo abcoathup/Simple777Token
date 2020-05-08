@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC777/IERC777.sol";
 import "@openzeppelin/contracts/introspection/IERC1820Registry.sol";
@@ -30,7 +30,7 @@ contract Simple777Recipient is IERC777Recipient {
         uint256 amount,
         bytes calldata userData,
         bytes calldata operatorData
-    ) external {
+    ) external override {
         require(msg.sender == address(_token), "Simple777Recipient: Invalid token");
 
         // do stuff
